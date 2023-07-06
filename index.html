@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Investonova </title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lang-js/0.3.5/lang.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Function to detect user's location
+      function detectLocation() {
+        // Replace 'your-api-key' with your actual API key from an IP geolocation service
+        var apiKey = 'your-api-key';
+        
+        // Send a request to the IP geolocation service
+        $.getJSON('https://api.ipgeolocation.com/ipgeo?json=1&callback=?', function(data) {
+          var countryCode = data.country_code2.toLowerCase();
+          // Call the function to change the language based on the detected country code
+          changeLanguage(countryCode);
+        });
+      }
+
+      // Function to change the language based on the country code
+      function changeLanguage(countryCode) {
+        // Replace these values with your specific language codes and their corresponding URLs
+        var languageMappings = {
+          'us': 'en',  // United States
+          'gb': 'en',  // United Kingdom
+          'fr': 'fr',  // France
+          'de': 'de',  // Germany
+          // Add more country codes and language codes as needed
+        };
+        
+        // Get the language code based on the country code
+        var languageCode = languageMappings[countryCode];
+        
+        // If a language code is found, redirect to the corresponding URL
+        if (languageCode) {
+          var currentURL = window.location.href;
+          var newURL = currentURL.replace(/\/[^\/]*$/, '/' + languageCode + '/');
+          window.location.href = newURL;
+        }
+      }
+      
+      // Call the function to detect the user's location and change the language
+      detectLocation();
+    });
+  </script>
+
+</head>
+
+<body id="dark" data-new-gr-c-s-check-loaded="14.1028.0" data-gr-ext-installed="">
+  <header class="dark-bb">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html"><img src="assets/img/trustwallet.svg" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="ion-navicon-round"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="headerMenu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="accounttypes.html" style="color: #fff;">Account Types </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              Trader Center
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="economiccalender.html">Economic Calendar</a>
+              <a class="dropdown-item" href="spreadtable.html">Spread Table</a>
+              <a class="dropdown-item" href="forexmarketdata.html">Forex Market Data </a>
+              <a class="dropdown-item" href="Cryptocurrenciesmarketdata.html">Cryptocurrencies Market Data </a>
+              <a class="dropdown-item" href="compoundinterestcalculator.html">Compound Interest Calculator</a>
+              <a class="dropdown-item" href="tradinghours.html">Trading Hours</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Promotions
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="referafriend.html">Refer a Friend</a>
+              <a class="dropdown-item" href="insurance.html">100% Insurance</a>
+   
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Instruments
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="aboutIndices.html">Indices</a>
+              <a class="dropdown-item" href="aboutcommodities.html">Commodities</a>
+              <a class="dropdown-item" href="/aboutforex.html">Forex</a>
+              <a class="dropdown-item" href="/aboutStocks.html">Stocks</a>
+              <a class="dropdown-item" href="/aboutMetals.html">Metal</a>
+              <a class="dropdown-item" href="/aboutcypto.html">Crypto</a>
+
+            </div>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About Company
+            </a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item" href="/aboutcompany.html">Terms and Conditions</a>
+            <a class="dropdown-item" href="/riskdisclamer.html">Risk Disclamer</a>
+            <a class="dropdown-item" href="/privacy-policy.html">Privacy Policy</a>
+            <a class="dropdown-item" href="/refundpolicy.html">Refund Policy</a>
+            <a class="dropdown-item" href="/amlkycpolicy.html">AML/KYC Policy</a>
+            <a class="dropdown-item" href="contactus.html">Contact Us</a>
+            <a class="dropdown-item" href="complainant.html">Complaint Form</a>
+      
+            </div>
+          </li>
+         
+           
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <a href="signin.html" class="btn-1">Sign In</a>
+          <a href="signup.html" class="btn-2">Get Started</a>
+        </ul>
+      </div>
+    </nav>
+  
+  <div class="landing-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Trading environment with the best pricing
+          </h2>
+          <p>Trusting in the security of the Global leader in broker, more than 3 million products are waiting</p>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Your Email" aria-label="Enter Your Email"
+              aria-describedby="button-addon2" style="border-radius: 50px;">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" id="button-addon2" style="border-radius: 50px;">Get
+                Started</button>
+            </div>
+          </div>
+        </div>
+        <div class="offset-md-1 col-md-5">
+          <!-- TradingView Widget BEGIN -->
+          <img src="assets/img/MockUpSignalasApp1.png" alt="">
+
+          <!-- TradingView Widget END -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </header>
+  <div class="container-fluid no-fluid">
+    <div class="row sm-gutters">
+      <div class="col-md-12 mb15">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener"
+              target="_blank"><span class="blue-text"></span></a> </div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+            async>
+              {
+                "symbols": [
+                  {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                  },
+                  {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "US 100"
+                  },
+                  {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                  },
+                  {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "Bitcoin"
+                  },
+                  {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "Ethereum"
+                  },
+                  {
+                    "description": "Tesla",
+                    "proName": "NASDAQ:TSLA"
+                  },
+                  {
+                    "description": "Apple ",
+                    "proName": "NASDAQ:AAPL"
+                  },
+                  {
+                    "description": "AMD",
+                    "proName": "NASDAQ:AMD"
+                  },
+                  {
+                    "description": "Amazon",
+                    "proName": "NASDAQ:AMZN"
+                  },
+                  {
+                    "description": "Meta",
+                    "proName": "NASDAQ:META"
+                  },
+                  {
+                    "description": "Microsoft ",
+                    "proName": "NASDAQ:MSFT"
+                  }
+                ],
+                  "showSymbolLogo": true,
+                    "colorTheme": "dark",
+                      "isTransparent": false,
+                        "displayMode": "adaptive",
+                          "locale": "en"
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="container">
+      <div class="card_row">
+        <div class="card_wrapper" style="border-radius: 50px;">
+          <div class="p-3">
+            <div class="card_icon_wrapper">
+              <img src="assets/img/icons/sheild.png" alt="" class="image_div" style="color: #fff;">
+            </div>
+
+            <div class="mt-3">
+              <h4 style="color: #fff; text-align: center; font-size: 19px; font-weight: bold;">
+
+                Higher Protection</h4>
+              <p style="color: #fff; text-align: center; font-size: 12px; ">Negative Balance Protection, Smart Stop out levels, Member of the ICF
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card_wrapper" style="border-radius: 50px;">
+          <div class="p-3">
+            <div class="card_icon_wrapper">
+              <img src="assets/img/icons/give.png" alt="" class="image_div">
+            </div>
+
+            <div class="mt-3">
+              <h4 style="color: #fff; text-align: center; font-size: 19px; font-weight: bold;">Easier to Start</h4>
+              <p style="color: #fff; text-align: center; font-size: 12px; ">Minimum lot size 0,01, Minimum Deposit from USD 100, Accounts for all types of Traders</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card_wrapper" style="border-radius: 50px;">
+          <div class="p-3">
+            <div class="card_icon_wrapper">
+              <img src="assets/img/icons/cards.png" alt="" class="image_div">
+            </div>
+
+            <div class="mt-3">
+              <h4 style="color: #fff; text-align: center; font-size: 19px; font-weight: bold;">Endless Opportunities</h4>
+              <p style="color: #fff; text-align: center; font-size: 12px; ">Trade on 6 different asset classes and 250+ trading instruments from around the world</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card_wrapper" style="border-radius: 50px;">
+          <div class="p-3">
+            <div class="card_icon_wrapper">
+              <img src="assets/img/icons/24.png" alt="" class="image_div">
+            </div>
+
+            <div class="mt-3">
+              <h4 style="color: #fff; text-align: center; font-size: 19px; font-weight: bold;">Closer to you</h4>
+              <p style="color: #fff; text-align: center; font-size: 12px; ">24/7 Professional customer support team always available to guide you and answer all your questions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card_wrapper" style="border-radius: 50px;">
+          <div class="p-3">
+            <div class="card_icon_wrapper">
+              <img src="assets/img/icons/internet.png" alt="" class="image_div">
+            </div>
+
+            <div class="mt-3">
+              <h4 style="color: #fff; text-align: center; font-size: 19px; font-weight: bold;">Instant access</h4>
+              <p style="color: #fff; text-align: center; font-size: 12px; ">Modern high-speed trading platform, simple trading features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-12">
+
+        </div>
+        <div class="col-md-2">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/global-online.png" alt="">
+            <h3>Instant access</h3>
+            <p>Modern high-speed trading platform, simple trading features.</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/stock.png" alt="">
+            <h3>Trade assistants</h3>
+            <p>Autochartist market analyzing technology, personal manager</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons//chart (1).png" alt="">
+            <h3>Trading without
+              fail</h3>
+            <p>Variety of trading tools, automatic signals about profitable deals.</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons//chart (1).png" alt="">
+            <h3>Trading without
+              fail</h3>
+            <p>Variety of trading tools, automatic signals about profitable deals.</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons//chart (1).png" alt="">
+            <h3>Trading without
+              fail</h3>
+            <p>Variety of trading tools, automatic signals about profitable deals.</p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <div class="landing-info-one landing-info-one-bg mtb100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Trading environment with the best pricing</h2>
+          <p>At Investonova, we understand that traders need access to the best tools and resources in order to succeed in the markets. That's why our platform is designed to provide users with an exceptional trading experience, with a comprehensive suite of features and tools to help you stay on top of market movements and make informed trading decisions.</p>
+          <ul>
+            <li><i class="ion-checkmark-circled"></i> Live Technical Analysis</li>
+            <li><i class="ion-checkmark-circled"></i> Live Market Data</li>
+            <li><i class="ion-checkmark-circled"></i>Dedicated customer support.</li>
+            <li><i class="ion-checkmark-circled"></i> Deposit & Withdraw</li>
+            <li><i class="ion-checkmark-circled"></i> Market depth</li>
+
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img src="assets/img/dash-preview-dark.png" class="visible-mobile" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="landing-info-one mtb100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container tradingview-gain-and-loser">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js"
+              async>
+                {
+                  "colorTheme": "dark",
+                    "dateRange": "12M",
+                      "exchange": "US",
+                        "showChart": true,
+                          "locale": "en",
+                            "width": "100%",
+                              "height": "600",
+                                "largeChartUrl": "",
+                                  "isTransparent": false,
+                                    "showSymbolLogo": true,
+                                      "plotLineColorGrowing": "rgba(28, 217, 121, 1)",
+                                        "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                          "gridLineColor": "rgba(240, 243, 250, 1)",
+                                            "scaleFontColor": "rgba(120, 123, 134, 1)",
+                                              "belowLineFillColorGrowing": "rgba(33, 222, 95, 0.12)",
+                                                "belowLineFillColorFalling": "rgba(255, 0, 0, 0.12)",
+                                                  "symbolActiveColor": "rgba(33, 150, 243, 0.12)"
+                }
+              </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+        <div class="offset-md-1 col-md-6">
+          <h2>Live Market Gainers and Losers Tracking</h2>
+          <p>At Investonova, we believe that staying on top of market movements is essential for successful Trading. That's why our platform is designed to provide users with access to the latest market data and insights, with a range of tools and features that help you track live gainers and losers, execute transactions quickly and easily, and stay up-to-date with daily market analysis and research.</p>
+          <ul>
+            <li><i class="ion-checkmark-circled"></i> Live Gainers Tracking</li>
+            <li><i class="ion-checkmark-circled"></i> Live Losers Tracking</li>
+            <li><i class="ion-checkmark-circled"></i> Fast Transaction Execution.</li>
+            <li><i class="ion-checkmark-circled"></i> Daily Market Analysis & Researches</li>
+            <li><i class="ion-checkmark-circled"></i> Manage Wallets</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+ 
+  
+  <div class="landing-feature landing-start">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/contract.png" alt="" style="pointer-events: none;">
+           <h3 style="font-size: 18px; font-weight: bold;">
+            KYC</h3>
+            <h3 style="font-size: 14px;">Fill in the onboarding Questionnaire </h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/kyc.png" alt="" style="pointer-events: none;">
+            <h3 style="font-size: 18px; font-weight: bold;">Upload</h3>
+            <h3 style="font-size: 14px;">Upload required verifications documents
+            </h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/loan.png" alt="" style="pointer-events: none;">
+            <h3 style="font-size: 18px; font-weight: bold;">Funding</h3>
+            <h3 style="font-size: 14px;">Fund your account and start trading
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="side_img_wrapper p-3">
+          <img src="./assets/img/sideImage.png" alt="" class="image_container">
+        </div>
+        <div class="d-flex justify-content-between p-3">
+          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <h2 class="text-white">Everything a trader needs to Succeed</h2>
+          <div class="card_container">
+            <div class="card mt-3 shadow border-0 card_section">
+              <div class="d-flex">
+                <div class="icon_container">
+                  <img src="./assets/img/icons/open-book.png" alt="" class="icon_wrappers">
+                </div>
+                <div class="p-2">
+                  <h6>Education, Ebooks & Webinars</h6>
+                  <p>Tools and resources for all levels of traders to assist you perform educated trading decisions</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow mt-3 border-0 card_section">
+              <div class="d-flex">
+                <div class="icon_container">
+                  <img src="./assets/img/icons/forex (1).png" alt="" class="icon_wrappers">
+                </div>
+                <div class="p-2">
+                  <h6>World-renowned Platforms & Tools</h6>
+                  <p>Leading trading technology for perfecting your strategies, leading to a more successful trading journey</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow mt-3 border-0 card_section">
+              <div class="d-flex">
+                <div class="icon_container">
+                  <img src="./assets/img/icons/credit-card.png" alt="" class="icon_wrappers">
+                </div>
+                <div class="p-2">
+                  <h6>Popular Deposit & Withdrawal methods</h6>
+                  <p>Broad variety of payments systems to deposit and withdraw your funds in a secure and cost-free environment</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow mt-3 border-0 card_section">
+              <div class="d-flex">
+                <div class="icon_container">
+                  <img src="./assets/img/icons/support.png" alt="" class="icon_wrappers">
+                </div>
+                <div class="p-2">
+                  <h6> 24/7 Support</h6>
+                  <p>Experienced Support Team , always available to answer any question, in your language in seconds.</p>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="card shadow mt-3 border-0 card_section">
+              <div class="d-flex">
+                <div class="icon_container">
+                  <img src="./assets/img/icons/bar-chart.png" alt="" class="icon_wrappers">
+                </div>
+                <div class="p-2">
+                  <h6>Daily Market Analysis & Researches</h6>
+                  <p>Insightful analysis on systemic themes underlying the markets and traders perspective on these developmentss</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="landing-feature landing-start">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Start Investing Today</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/user.png" alt="" style="
+            pointer-events: none;
+        ">
+            <h3>Create an account </h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/bank.png" alt="" style="pointer-events: none;">
+          
+            <h3>Link your bank account </h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src="assets/img/icons/trade.png" alt="" style="pointer-events: none;">
+         
+            <h3>Start buying & selling</h3>
+          </div>
+        </div>
+        <div class="offset-md-1 col-md-10">
+          <div class="landing-sub-content">
+            <a href="signup.html">Get Started</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="landing-feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>News Feed</h2>
+        </div>
+        <div class="col-md-12">
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js"
+              async>
+                {
+                  "colorTheme": "dark",
+                    "isTransparent": false,
+                      "displayMode": "compact",
+                        "width": "100%",
+                          "height": 430,
+                            "locale": "en"
+                }
+              </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+ <!--<div class="app-container">
+    <div class="row">
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/swift.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/mastercard.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/mastercard.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/skirll.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/montegro.png">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/net.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/visa.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/pr.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/visa secure.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/trust.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="" href="https://www.xxx.org.au">
+                <img class="" src="assets/img/icons/sepa.png" alt="">
+            </a>
+        </div>
+        <div class="col-1">
+            
+                <img class="" src="assets/img/icons/paypal.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>-->
+<div class="credit-cards" style="text-align: center; width: 100%">
+  
+  <img style="height:30px; width: 60px; margin-left: 20px;margin-right: 20px;" src="assets/img/icons/mastercardsecurecode_logo.png"/>
+
+  <img style="height: 55px; width: 60px; margin-left: 20px;margin-right: 20px;" src="https://lexatrade.com/wp-content/themes/lexatrade/assets/css/../images/scrill.webp"/>
+  <img style="height: 30px; width: 60px; margin-left: 20px;margin-right: 20px;" src="assets/img/icons/astronew.jpg"/>
+  
+  <img style="height: 30px; width: 60px;margin-left: 20px;margin-right: 20px;"src="assets/img/icons/orangepay.png"/>
+  <img style="height: 30px; width: 60px; margin-left: 20px;margin-right: 20px;" src="https://shoplineimg.com/assets/footer/card_visa.png"/>
+
+  <img style="height: 30px; width: 60px; margin-left: 20px;margin-right: 20px;" src="assets/img/icons/nett.png"/>
+</div>
+  <footer class="landing-footer-two">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/img/trustwallet.svg" alt="">
+          <p style="font-size: 12px;">
+            Whether you're a seasoned trader or just starting out, Investonova offers the tools and resources you need to succeed in the markets. Join us today and experience the benefits of trading with a leading online platform.
+          </p>
+          <p style="font-size: 10px;">
+           
+            Investonova brand is operated by KW Investments Limited, which is authorized and
+regulated by the Seychelles Financial Services Authority, license number SD020. Partner company
+Key Way SoluFons Ltd provides content and operates the business, Head office address:
+Archiepiskopou Makariou III, 82, 1st Floor, Mesa Geitonia, 4113, Limassol, Cyprus, with company
+reg. number HE 388418..
+          </p>
+          <ul class="social-icon">
+            <li  ><a href="#" style="font-size: 20px;"><i class="ion-social-facebook-outline"></i></a></li>
+            <li><a href="#" style="font-size: 20px;"><i class="ion-social-instagram-outline"></i></a></li>
+            <li><a href="#" style="font-size: 20px;"><i class="ion-social-skype-outline"></i></a></li>
+            <li><a href="#" style="font-size: 20px;"><i class="ion-social-linkedin-outline"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h3>Trader Center</h3>
+          <ul>
+            <li><a href="economiccalender.html">Economic Calendar</a></li>
+            <li><a href="forexmarketdata.html">Forex Market Data</a></li>
+            <li><a href="Cryptocurrenciesmarketdata.html">Cryptocurrencies Market Data</a></li>
+            <li><a href="spreadtable.html">Spread Table</a></li>
+            <li><a href="tradinghours.html">Trading Hours</a></li>
+      
+            <li><a href="compoundinterestcalculator.html">Compound Interest Calculator</a></li>
+           
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h3> About Company</h3>
+          <ul>
+          
+            <li><a href="aboutcompany.html">Terms and Conditions</a></li>
+            <li><a href="riskdisclamer.html">Risk Disclamer</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="amlkycpolicy.html">AML/KYC Policy</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="complainant.html">Complaint Form</a></li>
+            <li><a href="refundpolicy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h3> Promotions</h3>
+          <ul>
+            <li><a href="referafriend.html">Refer a Friend</a></li>
+            <li><a href="insurance.html">100% Insurance</a></li>
+         
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h3>Instruments</h3>
+          <ul>
+            <li><a href="/aboutIndices.html">Indices</a></li>
+            <li><a href="aboutcommodities.html">Commodities</a></li>
+            <li><a href="aboutforex.html">Forex</a></li>
+            <li><a href="aboutStocks.html">Stocks</a></li>
+            <li><a href="aboutMetals.html">Metal</a></li>
+            <li><a href="/aboutcypto.html">Cypto</a></li>
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="text-center" style="color: #fff; font-size: 10px;"> &copy;Investonova 2023<br>
+      Your Investment Provider, All rights reserved</p>
+  </footer>
+
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/amcharts-core.min.js"></script>
+  <script src="assets/js/amcharts.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

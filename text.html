@@ -1,0 +1,56 @@
+<select id="my-dropdown">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+  
+  
+
+
+
+  <table id="my-table">
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="option1">
+        <td>Option 1 data 1</td>
+        <td>Option 1 data 2</td>
+        <td>Option 1 data 3</td>
+      </tr>
+      <tr id="option2">
+        <td>Option 2 data 1</td>
+        <td>Option 2 data 2</td>
+        <td>Option 2 data 3</td>
+      </tr>
+      <tr id="option3">
+        <td>Option 3 data 1</td>
+        <td>Option 3 data 2</td>
+        <td>Option 3 data 3</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+function updateTable() {
+  var table = document.getElementById("my-table");
+  var dropdown = document.getElementById("my-dropdown");
+  var selectedOption = dropdown.value;
+  
+  for (var i = 0; i < table.rows.length; i++) {
+    var row = table.rows[i];
+    if (row.id === selectedOption) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  }
+}
+
+document.getElementById("my-dropdown").addEventListener("change", updateTable);
+
+  </script>

@@ -1,0 +1,259 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Investonova </title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lang-js/0.3.5/lang.min.js"></script>
+
+  <style>.my-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .my-table th, .my-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .my-dropdown {
+    margin-bottom: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: table-row;
+  }
+  </style>
+
+</head>
+
+<body id="dark" data-new-gr-c-s-check-loaded="14.1028.0" data-gr-ext-installed="">
+  <header class="dark-bb">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html"><img src="assets/img/trustwallet.svg" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="ion-navicon-round"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="headerMenu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account Types
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="accounttypes.html">Account Types </a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              Trader Center
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="economiccalender.html">Economic Calendar</a>
+              <a class="dropdown-item" href="spreadtable.html">Spread Table</a>
+              <a class="dropdown-item" href="forexmarketdata.html">Forex Market Data </a>
+              <a class="dropdown-item" href="Cryptocurrenciesmarketdata.html">Cryptocurrencies Market Data </a>
+              <a class="dropdown-item" href="compoundinterestcalculator.html">Compound Interest Calculator</a>
+              <a class="dropdown-item" href="tradinghours.html">Trading Hours</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Promotions
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="referafriend.html">Refer a Friend</a>
+              <a class="dropdown-item" href="insurance.html">100% Insurance</a>
+   
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Instruments
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="aboutIndices.html">Indice</a>
+              <a class="dropdown-item" href="aboutcommodities.html">Commodites</a>
+              <a class="dropdown-item" href="/aboutforex.html">Forex</a>
+              <a class="dropdown-item" href="/aboutStocks.html">Stocks</a>
+              <a class="dropdown-item" href="/aboutMetals.html">Metal</a>
+              <a class="dropdown-item" href="/aboutcypto.html">Crypto</a>
+
+            </div>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About Company
+            </a>
+           <div class="dropdown-menu">
+              <a class="dropdown-item" href="/aboutcompany.html">Legal Documentation</a>
+              <a class="dropdown-item" href="/aboutcompany.html">Terms and Conditions</a>
+              <a class="dropdown-item" href="/riskdisclamer.html">Risk Disclamer</a>
+              <a class="dropdown-item" href="/privacy-policy.html">Privacy Policy</a>
+              <a class="dropdown-item" href="/refundpolicy.html">Refund Policy</a>
+              <a class="dropdown-item" href="/amlkycpolicy.html">AML/KYC Policy</a>
+              <a class="dropdown-item" href="contactus.html">Contact Us</a>
+              <a class="dropdown-item" href="complainant.html">Complaint Form</a>
+            </div>
+          </li>
+         
+           
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <a href="signin.html" class="btn-1">Sign In</a>
+          <a href="signup.html" class="btn-2">Get Started</a>
+        </ul>
+      </div>
+    </nav>
+  </header>
+ <body id="dark">
+    <div class="container-fluid">
+          <div class="row">
+              <div class="col-12 banner">
+              
+                  <h3 class="text-center" style="color: #fff;">TRADING HOURS</h3>
+          </div>
+              </div>
+          </div>
+      </div>
+      <div class="my-dropdown">
+        <label for="table-select">Select data:</label>
+        <select id="my-dropdown">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        
+    
+      
+      </div>
+      
+      <div class="table_wrapper mt-4">
+        <table class="table table-dark" id="my-table">
+        
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="option1">
+              <td>Option 1 data 1</td>
+              <td>Option 1 data 2</td>
+              <td>Option 1 data 3</td>
+            </tr>
+            <tr id="option1">
+              <td>Option 1 data 1</td>
+              <td>Option 1 data 2</td>
+              <td>Option 1 data 3</td>
+            </tr>
+            <tr id="option2">
+              <td>Option 1 data 1</td>
+              <td>Option 1 data 2</td>
+              <td>Option 1 data 3</td>
+            </tr>
+            <tr id="option2">
+              <td>Option 1 data 1</td>
+              <td>Option 1 data 2</td>
+              <td>Option 1 data 3</td>
+            </tr>
+            <tr id="option3">
+              <td>Option 3 data 1</td>
+              <td>Option 3 data 2</td>
+              <td>Option 3 data 3</td>
+            </tr>
+          </tbody>
+        </table>
+        
+
+
+
+      </div>
+      <footer class="landing-footer-two">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="assets/img/trustwallet.svg" alt="">
+              <p style="font-size: 12px;">
+                Whether you're a seasoned trader or just starting out, Investonova offers the tools and resources you need to succeed in the markets. Join us today and experience the benefits of trading with a leading online platform.
+              </p>
+              <ul class="social-icon">
+                <li><a href="#" style="font-size: 20px;"><i class="ion-social-facebook-outline"></i></a></li>
+                <li><a href="#" style="font-size: 20px;"><i class="ion-social-instagram-outline"></i></a></li>
+                <li><a href="#" style="font-size: 20px;"><i class="ion-social-skype-outline"></i></a></li>
+                <li><a href="#" style="font-size: 20px;"><i class="ion-social-linkedin-outline"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h3>Trader Center</h3>
+              <ul>
+                <li><a href="#">Economic Calendar</a></li>
+                <li><a href="#">Reporting season</a></li>
+                <li><a href="#">Expiry dates of future</a></li>
+                <li><a href="#">Contracts</a></li>
+                <li><a href="#">Spread Table</a></li>
+                <li><a href="#">Trading Hours</a></li>
+                <li><a href="#">important Information</a></li>
+                <li><a href="#">Compound Interest</a></li>
+                <li><a href="#">Calculator</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h3> About Company</h3>
+              <ul>
+                <li><a href="#">Legal Documentation</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Risk Disclamer</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">AML/KYC Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Complaint Form</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h3> Promotions</h3>
+              <ul>
+                <li><a href="referafriend.html">Refer a Friend</a></li>
+                <li><a href="insurance.html">100% Insurance</a></li>
+             
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h3>Instruments</h3>
+              <ul>
+                <li><a href="#">Indice/Shares</a></li>
+                <li><a href="#">Commodites</a></li>
+                <li><a href="#">Forex</a></li>
+                <li><a href="#">About Web Platforms</a></li>
+                <li><a href="#">About Web Terminal</a></li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+    
+    
+      <script src="assets/js/jquery-3.4.1.min.js"></script>
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/amcharts-core.min.js"></script>
+      <script src="assets/js/amcharts.min.js"></script>
+      <script src="assets/js/custom.js"></script>
+      <script src="assets/js/table.js"></script>
+    
